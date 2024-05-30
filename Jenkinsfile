@@ -14,7 +14,7 @@ pipeline {
                     steps {
                         // This line enables distribution
                         // The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
-                        sh "npm i"
+                        sh "npm i --legacy-peer-deps"
                         // sh "npx nx affected --base=HEAD~1 -t lint test build e2e-ci"
                         sh "npx nx show projects --base=HEAD~1 --affected --with-target build"
                     }
